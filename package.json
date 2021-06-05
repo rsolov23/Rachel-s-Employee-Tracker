@@ -1,0 +1,32 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "CMS Employee Tracker",
+  "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.1.0",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsolov23/Rachel-s-Employee-Tracker.git"
+  },
+  "keywords": [
+    "Employee",
+    "Tracker",
+    "MySQL",
+    "Node.js",
+    "Inquirer"
+  ],
+  "author": "Rachel Solov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsolov23/Rachel-s-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/rsolov23/Rachel-s-Employee-Tracker#readme"
+}
