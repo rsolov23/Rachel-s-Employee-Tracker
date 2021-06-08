@@ -1,9 +1,8 @@
 const inquirer = require("inquirer");
-// const db = require("./db/connection");
-const mysql = require("mysql2");
 const db = require("./db/connection");
 
 let listOfDepartments = [];
+
 const startApp = async () => {
   populateDepartments();
   let response = await inquirer.prompt([
@@ -109,6 +108,7 @@ const addDepartment = () => {
         (err, data) => {
           if (err) throw err;
           console.log(data);
+          startApp();
         }
       );
     });
@@ -144,6 +144,81 @@ const addRole = () => {
         (err, data) => {
           if (err) throw err;
           console.log(data);
+          startApp();
+        }
+      );
+    });
+};
+
+const addEmployee = () => {
+  inquirer
+    .prompt([
+      {
+        name: "newName",
+        message: "Please enter first name",
+      },
+      {
+        name: "lastName",
+        message: "Please enter last name",
+      },
+      {
+        name: "employeeRole",
+        message: "Please enter employee role",
+      },
+      {
+        name: "newManager",
+        message: "Please enter manager",
+      },
+    ])
+    .then((response) => {
+      console.log(
+        listOfDepartments.indexOf(
+          response.employeeRole.id,
+          response.newManager.id
+        ) + 1
+      );
+      db.query(
+        "INSERT INTO employee(first_name,last_name,role_id,manager_id) VALUES (?,?,?,?)",
+        [
+          response.newName,
+          response.lastName,
+          response.employeeRole,
+          response.newManager,
+        ],
+        (err, data) => {
+          if (err) throw err;
+          console.log(data);
+          startApp();
+        }
+      );
+    });
+};
+
+const updateEmployee = () => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "chooseEmployee",
+        message: "Please choose an employee to update.",
+        choices: [],
+      },
+      {
+        type: "list",
+        name: "roleList",
+        message: "Please choose the new role for this employee",
+        choices: [],
+      },
+    ])
+    .then((response) => {
+      console.log(listOfDepartments.indexOf(response.viewEmployees()) + 1);
+      db.query(
+        "UPDATE employee SET role_id ? WHERE last_name ?",
+        [response.employeeRole, response.lastName],
+        (err, data) => {
+          if (err) throw err;
+          console.log(data);
+          startApp();
         }
       );
     });

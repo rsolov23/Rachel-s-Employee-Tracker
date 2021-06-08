@@ -4,6 +4,7 @@ USE employeeTracker;
 INSERT INTO department (name)
 VALUES 
 ('Sales'),
+('Engineering'),
 ('IT'),
 ('HR');
 
@@ -12,13 +13,16 @@ VALUES
 INSERT INTO role  (title, salary, department_id)
 
 VALUES 
-('Manager', 800000, 1),
-('Intern', 30000, 4),
-('Volunteer', 900000, 6);
-
+('Operations Manager', 800000, 1),
+('Quality Control', 500000, 2),
+('Accountant', 900000, 3),
+('Receptionist', 600000, 3),
+('Marketing Manager', 700000, 4);
 -- INSERT INTO employee
 INSERT INTO employee  (first_name, last_name, role_id, manager_id)
 VALUES
-('Dexter', 'Morgan', 1, 23),
-('Rita', 'Bennett', 2, 22),
-('Debra', 'Morgan', 3, 5);
+('Tony', 'Soprano', 1, 1),
+('Christopher', 'Moltisanti', 2, 1),
+('Carmela', 'Soprano', 2, 1),
+('Tony', 'Blundetto', 3, 1),
+('Paulie', 'Gualtieri', 4, 1);
