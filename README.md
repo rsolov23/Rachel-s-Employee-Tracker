@@ -20,6 +20,8 @@ so that you can organize and plan your business
 
 View this Screentastify link for instructions:
 
+-(https://drive.google.com/file/d/1s0JKm7hS1Q9zoEG0oy_CNMeFCCcjKXOI/view)
+
 ![A screenshot of the web page](./images/screenshot2.jpg)
 ![A screenshot of the web page](./images/screenshot3.jpg)
 
